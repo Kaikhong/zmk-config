@@ -44,7 +44,7 @@
 // | blqd |     |1/3lf|1/3md|1/3rt| brqd|   |  0  |  1  |  2  |  3  |  /  |      |
 //                    | GUI |     |     |   |     |     |     |
                         bindings = <
-   &kp LC(LA(U))   &trans   &kp LC(LA(E))       &kp LC(LA(R))     &kp LC(LA(T))     &kp LC(LA(E))         &kp EQUAL   &kp N7   &kp N8  &kp N9   &kp ASTERISK  &trans
+   &kp LC(LA(U))   &trans   &kp LC(LA(E))       &kp LC(LA(R))     &kp LC(LA(I))     &kp LC(LA(E))         &kp EQUAL   &kp N7   &kp N8  &kp N9   &kp ASTERISK  &trans
    &trans          &trans   &kp LC(LA(LEFT))    &kp LC(LA(RET))   &kp LC(LA(RIGHT)) &kp LC(LA(L))         &kp MINUS   &kp N4   &kp N5  &kp N6   &kp PLUS      &trans
    &kp LC(LA(J))   &trans   &kp LC(LA(D))       &kp LC(LA(F))     &kp LC(LA(G))     &kp LC(LA(K))         &kp N0      &kp N1   &kp N2  &kp N3   &kp SLASH     &trans
                                             &kp LGUI      &trans         &trans           &trans      &trans   &trans
@@ -72,9 +72,9 @@
 // | SHFT |     |     |     |     |     |   |  0  |  1  |  2  |  3  |  /  |      |
 //                    | GUI |     | SPC |   | ENT |     | ALT |
                         bindings = <
-   &kp TAB    &kp N1       &kp N2       &kp N3       &kp N4       &trans         &trans    &trans    &trans   &trans    &trans   &kp LC(LA(PG_UP))
+   &kp TAB    &kp N1       &kp N2       &kp N3       &kp N4       &trans         &trans    &trans    &trans   &trans    &trans   &kp LC(PG_UP)
    &bt BT_CLR &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &trans    &trans    &trans    &trans   &trans    &trans      &trans
-   &kp LSHFT  &trans       &trans       &trans       &trans       &trans         &trans       &trans    &trans   &trans    &trans      &kp LC(LA(PG_DN))
+   &kp LSHFT  &trans       &trans       &trans       &trans       &trans         &trans       &trans    &trans   &trans    &trans      &kp LC(PG_DN)
                           	        &kp LGUI     &trans       &trans       &trans      &trans   &trans 
                         >;
                 };
