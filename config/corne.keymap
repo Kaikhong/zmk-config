@@ -13,6 +13,10 @@
     quick-release;
 };
 
+&sl {
+    release-after-ms = <2000>;
+};
+
 
 / {
     conditional_layers {
@@ -34,7 +38,7 @@
 &kp ESC      &kp Q   &kp W    &kp E    &kp R      &kp T           &kp Y      &kp U   &kp I     &kp O     &kp P       &kp DEL
 &kp TAB      &kp A   &kp S    &kp D    &kp F      &kp G           &kp H      &kp J   &kp K     &kp L     &kp SQT     &kp LCTRL
 &kp LGUI     &kp Z   &kp X    &kp C    &kp V      &kp B           &kp N      &kp M   &kp COMMA &kp DOT   &kp FSLH    &kp RET
-                                 &sk LSHIFT &mo 1      &kp BSPC        &kp SPACE  &mo 2   &kp LALT
+                                 &sk LSHIFT &sl 1      &kp BSPC        &kp SPACE  &sl 2   &kp LALT
                         >;
                 };
                 lower_layer {
