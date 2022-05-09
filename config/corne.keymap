@@ -33,12 +33,27 @@ conditional_layers {
             then-layer = <ADJUST>;
         };
     };
-
-        lock_tog {
-            if-layers = <LOWER RAISE>;
-            then-layer = <LOCK_TOG>;
-        };
 };
+
+    combos {
+         compatible = "zmk,combos";
+
+         // The Lower+Raise+Backspace combo toggles a "soft lock" mode that
+         // effectively disables keystrokes (e.g., for when the keyboard is in
+         // storage or being transported).
+
+         // We use a fairly long timeout (1 second) to prevent the unlock combo
+         // itself from being triggered accidentally.
+
+         // If https://github.com/zmkfirmware/zmk/issues/405 is implemented,
+         // this combo can be replaced by a native behavior in the future.
+         combo_unlock {
+           timeout-ms = <1000>;
+           key-positions = <11 /* DEL */ 37 /* LOWER */ 40 /* RAISE */>;
+           bindings = <&tog LOCK>;
+         };
+     };
+
 
 / {
         keymap {
@@ -84,38 +99,20 @@ conditional_layers {
                         >;
                 };
 
-// "Soft lock" layer that shadows all other layers except the LOCK_TOG layer, effectively
-        // disabling all keys other than the lock/unlock sequence (Lower+Raise+Backspace) when the
-        // LOCK layer is active. This allows the keyboard to be transported without accidentally
-        // sending key events to connected hosts.
 
-        // Since we depend on conditional layers for the lock/unlock binding, the LOWER and RAISE
-        // positions must be bound to &trans rather than &none so their respective layers can still
-        // be activated even when the LOCK layer is enabled.
+         // Ideally, this layer would be completely empty, but as of June 2021,
+         // empty layers fail to compile due to
+         // https://github.com/zmkfirmware/zmk/issues/241. As such, we add no-op
+         // momentary layer keys to force compilation.
+         lock_layer {
+             bindings = <
+                 &none      &none      &none      &none      &none      &none                            &none      &none     &none      &none      &none      &none
+                 &none      &none      &none      &none      &none      &none                            &none      &none      &none      &none      &none      &none
+                 &none      &none      &none      &none      &none      &none                            &none      &none      &none      &none      &none      &none
+                                                             &none      &mo LOWER  &none      &mo RAISE  &none      &none
+             >;
+         };
 
-        // If https://github.com/zmkfirmware/zmk/issues/405 is implemented, the next two layers can
-        // be replaced by a native behavior in the future.
-        lock_layer {
-            bindings = <
-                &none      &none      &none      &none      &none      &none                            &none      &none      &none      &none      &none      &none
-                &none      &none      &none      &none      &none      &none                            &none      &none      &none      &none      &none      &none
-                &none      &none      &none      &none      &none      &none                            &none      &none      &none      &none      &none      &none
-                                                            &none      &trans     &none      &none      &trans     &none
-            >;
-        };
-
-        // The Lower+Raise+Backspace binding toggles the lock layer. Both the ADJUST and LOCK_TOG
-        // layers are active iff LOWER and RAISE are pressed, but since the LOCK_TOG layer is the
-        // highest-numbered layer, it can always be accessed, even if the LOCK layer is enabled (and
-        // hence thus the ADJUST layer bindings are not accessible).
-        lock_tog_layer {
-            bindings = <
-                &trans     &trans     &trans     &trans     &trans     &trans                           &trans     &trans     &trans     &trans     &trans     &tog LOCK
-                &trans     &trans     &trans     &trans     &trans     &trans                           &trans     &trans     &trans     &trans     &trans     &trans
-                &trans     &trans     &trans     &trans     &trans     &trans                           &trans     &trans     &trans     &trans     &trans     &trans
-                                                            &trans     &trans     &trans     &trans     &trans     &trans
-            >;
-        };
     };
 };
 
