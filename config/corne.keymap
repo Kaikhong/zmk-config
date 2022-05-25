@@ -45,34 +45,34 @@ conditional_layers {
 &kp ESC       &kp Q   &kp W    &kp E    &kp R      &kp T           &kp Y      &kp U   &kp I     &kp O     &kp P       &kp DEL
 &kp LGUI      &kp A   &kp S    &kp D    &kp F      &kp G           &kp H      &kp J   &kp K     &kp L     &kp SQT     &kp LCTRL
 &mt LALT TAB  &kp Z   &kp X    &kp C    &kp V      &kp B           &kp N      &kp M   &kp COMMA &kp DOT   &kp FSLH    &kp RET
-                             &kp LSHIFT &sl LOWER  &kp BSPC        &kp SPACE  &sl RAISE   &kp COLON
+                             &sk LSHIFT &sl LOWER  &kp BSPC        &kp SPACE  &sl RAISE   &kp SEMI
                         >;
                 };
                 lower_layer {
 
                         bindings = <
                                                                                                                                                                                                                 
-&reset       &kp PG_UP     &kp LS(LG(LBKT))     &kp UP      &kp LS(LG(RBKT))    &kp C_VOL_UP            &kp LC(LA(U))    &kp LC(LA(W))       &kp LC(LA(E))     &kp LC(LA(R))     &kp LC(LA(I))   &trans      
+&trans       &kp PG_UP     &kp LS(LG(LBKT))     &kp UP      &kp LS(LG(RBKT))    &kp C_VOL_UP            &kp LC(LA(U))    &kp LC(LA(W))       &kp LC(LA(E))     &kp LC(LA(R))     &kp LC(LA(I))   &trans      
 &trans       &kp HOME      &kp LEFT             &kp DOWN    &kp RIGHT           &kp C_MUTE              &trans           &kp LC(LA(LEFT))    &kp LC(LA(RET))   &kp LC(LA(RIGHT)) &kp LC(LA(L))   &trans
 &trans       &kp PG_DN     &kp LG(LBKT)         &kp END     &kp LG(RBKT)        &kp C_VOL_DN            &kp LC(LA(J))    &kp LC(LA(X))       &kp LC(LA(C))     &kp LC(LA(V))     &kp LC(LA(K))   &trans        
-                                                &trans      &trans              &bootloader             &trans           &trans              &trans
+                                                &trans      &trans              &trans                  &kp LG(SPACE)    &trans              &trans
                         >;
                 };
 
                 raise_layer {
 
                         bindings = <
-&trans  &kp RBKT    &kp PERCENT  &kp AT       &kp RPAR   &kp QMARK          &kp MINUS   &kp N7   &kp N8   &kp N9   &kp ASTRK  &reset
+&trans  &kp RBKT    &kp PERCENT  &kp AT       &kp RPAR   &kp QMARK          &kp MINUS   &kp N7   &kp N8   &kp N9   &kp ASTRK  &trans
 &trans  &kp LBKT    &kp SEMI     &kp COLON    &kp LPAR   &kp AMPS           &kp N0      &kp N4   &kp N5   &kp N6   &kp EQUAL  &trans
 &trans  &kp HASH    &kp GRAVE    &kp DOLLAR   &kp UNDER  &kp EXCL           &kp PLUS    &kp N1   &kp N2   &kp N3   &kp SLASH  &trans
-                    	         &trans       &trans     &trans             &bootloader &trans   &trans
+                    	         &trans       &trans     &kp LA(BSPC)       &trans      &trans   &trans
                         >;
                 };
 
                 adjust_layer {
 
                         bindings = <
-&trans          &trans        &trans            &trans          &trans           &trans                 &trans  &trans  &trans  &trans  &trans  &trans
+&trans          &trans        &trans            &trans          &trans           &trans                 &trans  &trans  &trans  &trans  &trans  &kp LC(LS(LG(N4)))
 &trans          &bt BT_CLR    &bt BT_SEL 0      &bt BT_SEL 1    &bt BT_SEL 2     &bt BT_SEL 3           &trans  &trans  &trans  &trans  &trans  &trans
 &kp LC(PG_UP)   &trans        &trans            &trans          &trans           &bt BT_SEL 4           &trans  &trans  &trans  &trans  &trans  &kp LC(PG_DN)
                           	                &trans          &trans           &trans                 &trans  &trans  &trans 
