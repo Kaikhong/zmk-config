@@ -45,7 +45,7 @@ conditional_layers {
 &kp ESC         &kp Q   &kp W    &kp E    &kp R      &kp T           &kp Y      &kp U   &kp I     &kp O     &kp P       &kp DEL
 &mt TAB LALT    &kp A   &kp S    &kp D    &kp F      &kp G           &kp H      &kp J   &kp K     &kp L     &kp SQT     &kp LCTRL
 &kp LSHFT       &kp Z   &kp X    &kp C    &kp V      &kp B           &kp N      &kp M   &kp COMMA &kp DOT   &kp SEMI    &kp RET
-                                 &kp LGUI &kp LOWER  &kp BSPC        &kp SPACE  &kp RAISE   &sk LSHFT
+                                 &kp LGUI &mo LOWER  &kp BSPC        &kp SPACE  &mo RAISE   &sk LSHFT
                         >;
                 };
                 lower_layer {
