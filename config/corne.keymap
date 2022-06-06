@@ -43,8 +43,8 @@ conditional_layers {
 
                         bindings = <
 &kp ESC         &kp Q   &kp W    &kp E    &kp R      &kp T           &kp Y      &kp U       &kp I     &kp O     &kp P      &kp DEL
-&mt LALT TAB    &kp A   &kp S    &kp D    &kp F      &kp G           &kp H      &kp J       &kp K     &kp L     &sk LSHFT   &kp LCTRL
-&kp LSHFT        &kp Z   &kp X    &kp C    &kp V      &kp B           &kp N      &kp M       &kp COMMA &kp DOT   &kp SQT    &kp RET
+&mt LALT TAB    &kp A   &kp S    &kp D    &kp F      &kp G           &kp H      &kp J       &kp K     &kp L     &kp SQT   &kp LCTRL
+&kp LSHFT        &kp Z   &kp X    &kp C    &kp V      &kp B           &kp N      &kp M       &kp COMMA &kp DOT   &sk LSHFT    &kp RET
                                  &kp LGUI &mo LOWER  &kp BSPC        &kp SPACE  &mo RAISE   &kp CAPS
                         >;
                 };
