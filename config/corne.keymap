@@ -7,17 +7,11 @@
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/bt.h>
-#include <dt-bindings/zmk/mouse.h>
 
 #define LOWER 1
 #define RAISE 2
 #define ADJUST 3
 #define MOUSE 4
-
-&mwh {    
-        time-to-max-speed-ms = <2000>;
-        acceleration-exponent=<0>;
-}; 
 
 &sk {
     release-after-ms = <2000>;
@@ -88,10 +82,10 @@ conditional_layers {
 
                 mouse_layer { //mouse build from git@github.com:krikun98/zmk.git branch mouse-pr
                        bindings = <
-   &none        &none    &mwh SCROLL_HOR(-15)   &mwh SCROLL_HOR(15)   &none       &none                   &none   &none  &none   &none  &none  &none        
-   &none        &none    &mkp RCLK              &mkp MCLK             &mkp RCLK   &none                   &none   &none  &none   &none  &none  &none
+   &none        &none    &none   &none     &none       &none                   &none   &none  &none   &none  &none  &none        
+   &none        &none    &kp F17              &kp F18             &kp F16  &none                   &none   &none  &none   &none  &none  &none
    &none        &none    &none                  &none                 &none       &none                   &none   &none  &none   &none  &none  &none      
-                                &none     &mwh SCROLL_VERT(-15)  &mwh SCROLL_VERT(15)                     &none   &none  &none  
+                              &none   &none  &none                   &none   &none  &none  
                        >;
                 };                
 
