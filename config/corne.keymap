@@ -11,6 +11,7 @@
 #define LOWER 1
 #define RAISE 2
 #define ADJUST 3
+#define MOUSE 4
 
 &sk {
     release-after-ms = <2000>;
@@ -43,7 +44,7 @@ conditional_layers {
 
                         bindings = <
 &kp ESC         &kp Q   &kp W    &kp E    &kp R      &kp T           &kp Y      &kp U       &kp I     &kp O     &kp P      &kp DEL
-&mt LALT TAB    &kp A   &kp S    &kp D    &kp F      &kp G           &kp H      &kp J       &kp K     &kp L     &kp SQT   &kp LCTRL
+&lt MOUSE TAB    &kp A   &kp S    &kp D    &kp F      &kp G           &kp H      &kp J       &kp K     &kp L     &kp SQT   &kp LCTRL
 &kp LSHFT        &kp Z   &kp X    &kp C    &kp V      &kp B           &kp N      &kp M       &kp COMMA &kp DOT   &sk LSHFT    &kp RET
                                  &kp LGUI &mo LOWER  &kp BSPC        &kp SPACE  &mo RAISE   &kp CAPS
                         >;
@@ -78,6 +79,15 @@ conditional_layers {
                           	                &trans          &trans           &trans                 &trans        &trans  &trans 
                         >;
                 };
+
+                mouse_layer { //mouse build from git@github.com:krikun98/zmk.git branch mouse-pr
+                       bindings = <
+   &none        &none    &mwh SCROLL_HOR(-15)   &mwh SCROLL_HOR(15)   &none       &none                   &none   &none  &none   &none  &none  &none        
+   &none        &none    &mkp RCLK              &mkp MCLK             &mkp RCLK   &none                   &none   &none  &none   &none  &none  &none
+   &none        &none    &none                  &none                 &none       &none                   &none   &none  &none   &none  &none  &none      
+                                &none     &mwh SCROLL_VERT(-15)  &mwh SCROLL_VERT(15)                     &none   &none  &none  
+                       >;
+                };                
 
 
 
